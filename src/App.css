@@ -1,22 +1,85 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  margin: 70px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  max-width: 500px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #ffffff;
 }
 
-.App-link {
-  color: #09d3ac;
+.title {
+  position: relative;
+  margin: 0;
+  padding: 10px 15px;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 3px;
+  transform: translate(-50%);
+  background: red;
+  z-index: -10;
+}
+
+input {
+  font-size: 30px;
+  margin-left: 10px;
+  color: inherit;
+  outline: none;
+  background-color: transparent;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  transition: 0.3s all ease-in-out;
+  text-align: center;
+}
+
+input:focus {
+  background-color: #c9faef;
+}
+
+.error {
+  position: fixed;
+  top: 400px;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translate(-50%);
+}
+
+.error-enter {
+  left: -1000px;
+}
+.error-enter-active {
+  left: 50%;
+  transition: left 1s;
+}
+.error-exit {
+  left: 50%;
+}
+.error-exit-active {
+  left: -1000px;
+  transition: left 1s;
+}
+
+.error img {
+  max-width: 100%;
+}
+
+.error span {
+  position: absolute;
+  font-size: 40px;
+  width: 100%;
+  text-align: center;
 }
