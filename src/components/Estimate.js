@@ -1,4 +1,6 @@
 import React, { useReducer } from "react";
+import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
+
 import Error from "./Error";
 
 const initialState = {
@@ -29,10 +31,10 @@ const reducer = (state, action) => {
 const Estimate = () => {
   const [{ toliks, error }, dispatch] = useReducer(reducer, initialState);
   return (
-    <div>
+    <div className="estimate">
+      <FaPlusCircle onClick={() => dispatch({ type: "increase" })} />
       Estimate: {toliks} Toliks
-      <button onClick={() => dispatch({ type: "increase" })}>+</button>
-      <button onClick={() => dispatch({ type: "decrease" })}>-</button>
+      <FaMinusCircle onClick={() => dispatch({ type: "decrease" })} />
       <Error error={error} />
     </div>
   );

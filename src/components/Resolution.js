@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { FaAngleDoubleRight, FaAngleDoubleLeft } from "react-icons/fa";
 import TooSmall from "./TooSmall";
+import TooLarge from "./TooLarge";
+import Super from "./Super";
 
 function useMedia(query) {
   const [matches, setMatches] = useState(window.matchMedia(query).matches);
@@ -27,8 +28,8 @@ export default function Resolution() {
   return (
     <div>
       {tooSmall && <TooSmall />}
-      {tooLarge && <p> "You dont need so many, go narrower!"</p>}
-      {!tooSmall && !tooLarge && <p>"Now it's super!"</p>}
+      {tooLarge && <TooLarge />}
+      {!tooSmall && !tooLarge && <Super />}
     </div>
   );
 }

@@ -48,10 +48,10 @@ input:focus {
 
 .error {
   position: fixed;
-  top: 400px;
+  top: 55%;
   left: 50%;
-  width: 500px;
-  height: 500px;
+  width: 50%;
+  height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -79,7 +79,46 @@ input:focus {
 
 .error span {
   position: absolute;
-  font-size: 40px;
+  font-size: 24px;
   width: 100%;
   text-align: center;
+}
+
+.notification {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  color: #0aca9f;
+  margin: 0 10px;
+  animation: slide 400ms linear alternate infinite;
+}
+
+.fire {
+  color: #e25822;
+}
+
+@keyframes slide {
+  from {
+    margin: 0 10px;
+  }
+
+  to {
+    margin: 0 20px;
+  }
+}
+
+.estimate {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.estimate svg {
+  cursor: pointer;
+  color: #7e92f6;
+  margin: 0 10px;
 }
