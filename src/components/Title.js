@@ -1,11 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-export default function Title() {
+const useTitle = title => {
+  useEffect(() => {
+    document.title = title;
+  });
+};
+
+const Title = () => {
   const [title, setTitle] = useState("React Classes");
 
   function handleTitleChange(e) {
     setTitle(e.target.value);
   }
+
+  useTitle(title);
 
   return (
     <>
@@ -13,4 +21,6 @@ export default function Title() {
       <input value={title} onChange={handleTitleChange} />
     </>
   );
-}
+};
+
+export default Title;

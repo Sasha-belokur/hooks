@@ -30,6 +30,7 @@ const reducer = (state, action) => {
 
 const Estimate = () => {
   const [{ toliks, error }, dispatch] = useReducer(reducer, initialState);
+
   return (
     <div className="estimate">
       <FaPlusCircle onClick={() => dispatch({ type: "increase" })} />
